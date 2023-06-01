@@ -303,7 +303,6 @@ body {
   display: flex;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  background-color: white;
 }
 .chat_box_container .chatbox_footer .custom_form_group {
   margin: auto 0;
