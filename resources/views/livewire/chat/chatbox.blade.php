@@ -10,7 +10,5 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore ab eveniet voluptas incidunt aut officia quod fuga optio? Recusandae, rem! Id asperiores quis expedita. Obcaecati aperiam adipisci voluptatum eligendi dolor?
     </div>
 
-    <div class="chatbox_footer">
-        footer
-    </div>
+    
 </div>
