@@ -1,15 +1,18 @@
 <div>
     {{-- The best athlete wants his opponent at his best. --}}
+
+    @if ($selected_conversation)
+        
     <div class="chatbox_header">
         <div class="return">
             <i class="bi bi-arrow-left"></i>
         </div>
         
         <div class="img_container">
-            <img src="https://picsum.photos/id/237/200/300" alt="">
+            <img src="https://picsum.photos/id/{{ $receiver_instance->id }}/200/300" alt="">
         </div>
 
-        <div class="name">Altop</div>
+        <div class="name">{{ $receiver_instance->name }}</div>
         <div class="info">
             <div class="info_item">
                 <i class="bi bi-telephone-fill"></i>
@@ -24,27 +27,26 @@
     </div>
 
     <div class="chatbox_body">
-        <div class="msg_body msg_body_receiver">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio culpa quasi vitae impedit ad minus ratione esse. Sunt quae inventore suscipit, exercitationem porro iure fugiat sit voluptates aliquid repellat molestiae!
-            <div class="msg_body_footer">
-                <div class="date">2 Days Ago</div>
-                <div class="read">
-                    <i class="bi bi-check"></i>
-                </div>
-            </div>
-        </div>
 
-        <div class="msg_body msg_body_me">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio culpa quasi vitae impedit ad minus ratione esse. Sunt quae inventore suscipit, exercitationem porro iure fugiat sit voluptates aliquid repellat molestiae!
+        @foreach ($messages as $message)
+            <div class="msg_body msg_body_receiver">
+                {{ $message->body }}
+                <div class="msg_body_footer">
+                    <div class="date">{{ $message->created_at->format('m:i a') }}</div>
+                    <div class="read">
+                        <i class="bi bi-check"></i>
+                    </div>
+                </div>    
+            </div>    
+        @endforeach
 
-            <div class="msg_body_footer">
-                <div class="date">2 Days Ago</div>
-                <div class="read">
-                    <i class="bi bi-check"></i>
-                </div>
-            </div>
-        </div>
     </div>
 
+    @else
+    <div class="fs-4 text-center text-primary mt-5">
+        no conversation selected
+    </div>
+
+    @endif
     
 </div>

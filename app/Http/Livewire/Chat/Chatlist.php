@@ -18,9 +18,10 @@ class Chatlist extends Component
     public function chatUS(Conversation $conversation, $receiver_id) { //UserSelected
         // dd($conversation, $receiver_id);
         $this -> selected_conversation = $conversation;
-        $this -> receiver_instance = User::find($receiver_id);
+        $receiver_instance = User::find($receiver_id);
+        // dd($this ->selected_conversation, $this ->receiver_instance);
 
-        dd($this ->selected_conversation, $this ->receiver_instance);
+        $this->emitTo('chat.chatbox', 'loadConversation', $this->selected_conversation, $receiver_instance);
     }
 
     public function getCUI(Conversation $conversation, $request) { //ChatUserInstance
