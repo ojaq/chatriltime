@@ -9,7 +9,7 @@
         </div>
         
         <div class="img_container">
-            <img src="https://picsum.photos/id/{{ $receiver_instance->id }}/200/300" alt="">
+            <img src="https://ui-avatars.com/api/?name={{ $receiver_instance->name }}" alt="">
         </div>
 
         <div class="name">{{ $receiver_instance->name }}</div>
