@@ -22,6 +22,7 @@ class Chatlist extends Component
         // dd($this ->selected_conversation, $this ->receiver_instance);
 
         $this->emitTo('chat.chatbox', 'loadConversation', $this->selected_conversation, $receiver_instance);
+        $this->emitTo('chat.send-message', 'updateSendMessage', $this->selected_conversation, $receiver_instance);
     }
 
     public function getCUI(Conversation $conversation, $request) { //ChatUserInstance
