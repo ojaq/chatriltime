@@ -13,7 +13,7 @@
     @foreach ($conversations as $conversation)
 
     <div class="chatlist_body">
-        <div class="chatlist_item" wire:click="$emit('chatUS', {{ $conversation }}, {{ $this->getCUI($conversation, $name = 'id') }})">
+        <div class="chatlist_item" wire:key='{{ $conversation->id }}' wire:click="$emit('chatUS', {{ $conversation }}, {{ $this->getCUI($conversation, $name = 'id') }})">
             <div class="chatlist_img_container">
                 <img src="https://ui-avatars.com/api/?name={{ $this->getCUI($conversation, $name = 'name') }}" alt="">
             </div>

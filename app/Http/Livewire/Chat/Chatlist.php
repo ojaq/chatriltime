@@ -13,7 +13,7 @@ class Chatlist extends Component
     public $receiver_instance;
     public $name;
     public $selected_conversation;
-    protected $listeners = ['chatUS'];
+    protected $listeners = ['chatUS','refresh'=>'$refresh'];
 
     public function chatUS(Conversation $conversation, $receiver_id) { //UserSelected
         // dd($conversation, $receiver_id);

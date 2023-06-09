@@ -10,7 +10,6 @@ use Livewire\Component;
 class CreateChat extends Component
 {
     public $users;
-
     public $message = 'Hello';
 
     public function checkConversation($receiverId){
